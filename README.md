@@ -75,7 +75,7 @@ pip install waitress
 ```
 
 This should result in an executable named `waitress-serve` being added
-to the Python installation’s `scripts` command execution path.
+to the command execution path.
 
 To run the application:
 ```
