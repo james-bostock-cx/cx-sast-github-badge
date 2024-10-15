@@ -64,6 +64,31 @@ secure”. Instead, a [WSGI
 server](https://www.fullstackpython.com/wsgi-servers.html) should be
 used.
 
+## Example: Waitress
+
+As an example, to use
+[Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/)
+to deploy the Flask application, first install Waitress:
+
+```
+pip install waitress
+```
+
+This should result in an executable named `waitress-serve` being added
+to the Python installation’s `scripts` command execution path.
+
+To run the application:
+```
+waitress-serve --call sastbadge:create_app
+```
+
+By default, Waitress will use port 8080. The `--port` command line
+option can be used to specify a different port.
+
+See
+[here](https://flask.palletsprojects.com/en/2.3.x/deploying/waitress/)
+for more information.
+
 # Generating a Badge
 
 Once the web server is deployed and has a publicly accessible URL, the
