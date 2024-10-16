@@ -49,6 +49,9 @@ instance, the details and credentials for the CxSAST instance can be
 provided either via a `config.ini` file in a `.Checkmarx` directory in
 the user’s home directory, or via environment variables.
 
+The `SAST_BADGE_LOG_LEVEL` environment variable can be used to set the
+application’s log level.
+
 # Deployment
 
 For shields.io to be able to reach the web server, it must be exposed
