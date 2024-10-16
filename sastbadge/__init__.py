@@ -54,10 +54,10 @@ def create_app(test_config=None):
     # Without the following we get duplicate log messages
     app.logger.propagate = False
 
-    @app.route('/badge')
-    def badge():
+    @app.route('/badge/<project_id>')
+    def badge(project_id):
         try:
-            return generate_badge(34, app.logger)
+            return generate_badge(int(project_id), app.logger)
         except Exception as e:
             print(e)
             return {

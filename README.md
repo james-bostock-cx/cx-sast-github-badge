@@ -37,12 +37,13 @@ endpoint and returns a JSON response compliant with the schema
 described on the shields.io [Endpoint
 Badge](https://shields.io/badges/endpoint-badge) page.
 
-It is a fairly rudimentary implementation that, for example, hardcodes
-the project id. It tries to retrieve the latest scan for this
-project. If the project has never been scanned, it returns
-immediately. Otherwise, if the scan has finished, it retrieves the
-scan’s results statistics and, if no vulnerabilities were found,
-returns a badge with the word “passed” on a green background.
+It is a fairly rudimentary implementation. It exposes a
+`/badge/{project_id}` endpoint. It tries to retrieve the latest scan
+for the project specified by the request. If the project has never
+been scanned, it returns immediately. Otherwise, if the scan has
+finished, it retrieves the scan’s results statistics and, if no
+vulnerabilities were found, returns a badge with the word “passed” on
+a green background.
 
 As the Checkmarx Python SDK is used to interact with the CxSAST
 instance, the details and credentials for the CxSAST instance can be
