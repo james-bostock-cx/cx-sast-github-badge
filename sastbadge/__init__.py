@@ -59,7 +59,7 @@ def create_app(test_config=None):
         try:
             return generate_badge(int(project_id), app.logger)
         except Exception as e:
-            print(e)
+            app.logger.error(e)
             return {
                     'schemaVersion': 1,
                     'label': 'Checkmarx',
