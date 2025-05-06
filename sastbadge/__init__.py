@@ -28,7 +28,8 @@ def generate_badge(project_id, logger, scans_api=None):
     if scan.status.id == SCAN_STATUS_FINISHED:
         stats = scans_api.get_statistics_results_by_scan_id(scan.id)
         logger.debug(f'Scan statistics: {stats}')
-        if (stats.high_severity == 0 and
+        if (stats.critical_severity == 0 and
+            stats.high_severity == 0 and
             stats.medium_severity == 0 and
             stats.low_severity == 0 and
             stats.info_severity == 0):
